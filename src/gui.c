@@ -1,49 +1,30 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "tokenizer.h"
 #define LIMIT 100
-int main(){
+void input(int userInput, char arr[]);
+
+void main(){
   char arr[LIMIT];
+  int userInput;
+  char **t;
+  printf("Enter a sentence: ");
+  input(userInput, arr);
+  count_words(arr);
+  t = tokenize(arr);
+  print_tokens(t);
+  free_tokens(t);
+}
+void input(int userInput, char arr[]){
   int i = 0;
-  printf("> ");
-  for(char input; (input = getchar())!= '\n' && i < LIMIT; i++){
-    arr[i] = input;
-    putchar(input);
+  while((userInput = getchar()) != '\n'){ 
+    arr[i] = userInput;
+    //putchar(userInput);
+    i++;
   }
-  printf("\n");
-
-}
-int space_char(char c){
-  if(c == ' ' || c == '\t' || c == '\n' && c != '\0'){
-    return 0;
-  }
-  return 1;
+  arr[i] = '\0';
 }
 
-int non_space_char(char c){
-  if(c != ' ' || c != '\t' || c == '\n' && c != '\0'){
-    return 0;
-  }
-  return 1;
-}
-/*
-char *word_start(char *str){
-  
-}
-
-char *word_end(char *str){
-
-}
-int count_words(char *str){
-
-}
-*/
-int count_char(char *arr){
-  int count = 0;
-  for(int i = 0; *(arr + i) != '\0'; i++){
-    count++;
-  }
-  return count;
-}
 
 
