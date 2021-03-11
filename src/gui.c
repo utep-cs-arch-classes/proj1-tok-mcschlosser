@@ -1,7 +1,7 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "tokenizer.h"
+#include "history.h"
 #define LIMIT 100
 void input(int userInput, char arr[]);
 
@@ -15,6 +15,7 @@ void main(){
   t = tokenize(arr);
   print_tokens(t);
   free_tokens(t);
+  
 }
 void input(int userInput, char arr[]){
   int i = 0;
