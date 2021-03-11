@@ -54,6 +54,7 @@ char *copy_str(char *inStr, short len){
     i++;
     inStr++;
   }
+  pointer[len] = '\0';
   return pointer;
 }
 
