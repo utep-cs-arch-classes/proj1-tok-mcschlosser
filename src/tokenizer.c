@@ -35,14 +35,11 @@ char *word_end(char *str){
 int count_words(char *str){
   int words = 0;
   char *pointer = str;
-  printf("%d \n", pointer);
   while(*pointer){
     pointer = word_start(pointer);
     pointer = word_end(pointer);
     words++;
   }
-
-  //printf("%d \n", words);
   return words;
 }
 
@@ -84,7 +81,7 @@ void print_tokens(char **tokens){
     printf("Tokens[%d] = %s\n", k, tokens[k]);
     k++;
   }
-  printf("Tokens[%d] = %d\n", k, 0);
+  //printf("Tokens[%d] = %d\n", k, 0);
 }
 
 void free_tokens(char **tokens){
